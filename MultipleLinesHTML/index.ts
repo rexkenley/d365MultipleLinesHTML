@@ -11,6 +11,7 @@ export class MultipleLinesHTML
   private notifyOutputChanged: () => void;
   private currentHTML: string;
   private updatedByReact: boolean;
+  private isDisabled: boolean;
 
   /**
    * Empty constructor.
@@ -32,12 +33,14 @@ export class MultipleLinesHTML
     container: HTMLDivElement
   ) {
     const { html } = context.parameters,
+      { isControlDisabled } = context.mode,
       initialValue = (html && html.raw) || "";
 
     this.container = container;
     this.notifyOutputChanged = notifyOutputChanged;
     this.currentHTML = initialValue;
     this.updatedByReact = false;
+    this.isDisabled = isControlDisabled;
 
     // Add control initialization code
     ReactDOM.render(
@@ -45,6 +48,7 @@ export class MultipleLinesHTML
       React.createElement(MLH, {
         // @ts-ignore
         initialValue,
+        isDisabled: isControlDisabled,
         onHTMLChange: (content, editor) => {
           this.currentHTML = content;
           this.updatedByReact = true;
@@ -61,9 +65,26 @@ export class MultipleLinesHTML
    */
   public updateView(context: ComponentFramework.Context<IInputs>): void {
     // Add code to update control view
-    const { html } = context.parameters;
+    const { html } = context.parameters,
+      { isControlDisabled } = context.mode;
 
-    if (this.updatedByReact) {
+    if (this.isDisabled !== isControlDisabled) {
+      // Add control initialization code
+      ReactDOM.render(
+        // @ts-ignore
+        React.createElement(MLH, {
+          // @ts-ignore
+          initialValue: this.currentHTML,
+          isDisabled: isControlDisabled,
+          onHTMLChange: (content, editor) => {
+            this.currentHTML = content;
+            this.updatedByReact = true;
+            this.notifyOutputChanged();
+          }
+        }),
+        this.container
+      );
+    } else if (this.updatedByReact) {
       if (this.currentHTML === html.raw) this.updatedByReact = false;
 
       return;

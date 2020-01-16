@@ -11,7 +11,7 @@ import TinyEditor from "./tinyMCE";
 
 const tinyEditor = React.createRef(),
   MultipleLinesHTML = props => {
-    const { initialValue, onHTMLChange } = props;
+    const { initialValue, onHTMLChange, isDisabled } = props;
 
     return (
       <Provider store={store}>
@@ -20,6 +20,7 @@ const tinyEditor = React.createRef(),
             ref={tinyEditor}
             initialValue={initialValue}
             onHTMLChange={onHTMLChange}
+            disabled={isDisabled}
           />
         </Fabric>
       </Provider>
