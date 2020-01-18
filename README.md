@@ -7,7 +7,7 @@ A pcf component that would allow editing and rendering of html in "multiple line
 2. npm i
 3. npm run build
 4. cd deploy
-5. run msbuild /t:build /restore /p:configuration=Release
+5. msbuild /t:build /restore /p:configuration=Release
 
 You can find the deploy.zip in deploy\bin\Release.
 
