@@ -19,7 +19,7 @@
     "Text"
   ],
   "author": "Rex Kenley Tan",
-  "license": "MIT",  
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.6.3",
     "@reduxjs/toolkit": "^1.0.4",
