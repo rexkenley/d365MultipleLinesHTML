@@ -33,7 +33,6 @@
     "handlebars": "^4.5.3",
     "handlebars-intl": "^1.1.2",
     "lodash": "^4.17.15",
-    "npm-check": "^5.9.0",
     "office-ui-fabric-react": "^7.56.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
