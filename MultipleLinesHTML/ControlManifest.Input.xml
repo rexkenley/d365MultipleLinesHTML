@@ -7,10 +7,10 @@
       </type-group>
       <property name="html" display-name-key="html" description-key="html" of-type-group="MultipleLinesText" usage="bound" required="true" />
     <resources>
-      <code path="index.ts" order="1"/>
       <css path="../node_modules/tinymce/skins/ui/oxide/skin.min.css" order="1" />
       <css path="../node_modules/tinymce/skins/ui/oxide/content.min.css" order="2" />
       <css path="../node_modules/tinymce/skins/content/default/content.css" order="3" />
+      <code path="index.ts" order="4"/>      
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <resx path="strings/MultipleLinesHTML.1033.resx" version="1.0.0" />
       -->
