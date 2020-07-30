@@ -16,6 +16,7 @@ import "tinymce/plugins/table/index";
 import "tinymce/plugins/help/index";
 import "tinymce/plugins/autoresize/index";
 import "tinymce/plugins/searchreplace/index";
+import "tinymce/icons/default";
 import { Editor } from "@tinymce/tinymce-react";
 
 import get from "lodash/get";
