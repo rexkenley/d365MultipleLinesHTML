@@ -47,7 +47,7 @@
     "tinymce": "^5.4.1",
     "validator": "^12.2.0",
     "webpack": "^4.44.1",
-    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-bundle-analyzer": "^4.0.0",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
